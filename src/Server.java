@@ -9,7 +9,7 @@ public class Server extends ImplServerDate{
     public static void main(String[] args) {
         try{
             int port = 1099;
-            System.setProperty("java.rmi.server.hostname","10.0.75.1");
+            System.setProperty("java.rmi.server.hostname","HOSTIP");
             ImplServerDate obj = new ImplServerDate();
             Registry registry = LocateRegistry.createRegistry(port);
             ServerDate stub = (ServerDate) UnicastRemoteObject.exportObject(obj, port);

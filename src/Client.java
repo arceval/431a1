@@ -10,7 +10,7 @@ public class Client {
     public static void main(String[] args) {
         try{
             // We can change the host to remote machine address
-            Registry registry = LocateRegistry.getRegistry("10.0.75.1",1099);
+            Registry registry = LocateRegistry.getRegistry("HOSTIP",1099);
             Date time = new Date();
             long before_server_call = time.getTime();
             ServerDate stub = (ServerDate) registry.lookup("CurrentDate");
