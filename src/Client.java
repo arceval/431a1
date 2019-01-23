@@ -17,7 +17,7 @@ public class Client {
             time = new Date();
             long after_server_call = time.getTime();
             Date syn_server_time = stub.getDate();
-            long syn_client_time = syn_server_time.getTime() + (after_server_call - before_server_call);
+            long syn_client_time = syn_server_time.getTime() + ((after_server_call - before_server_call) / 2);
             Date syn_time = new Date(syn_client_time);
             // Synchronize the time in client based on remote server
             System.out.println(syn_time.toString());
