@@ -1,10 +1,18 @@
 # 431a1
 
-Project in intellj idea, should open as is. May need to import external libraries if the project complains about jdk. 
+IP and port are hardcoded, will need to be changed on the Server.java/Client.java to the server's ip and whatever is free on both.
 
-IP and port are hardcoded, will need to be changed on the Server/Client to the Server's ip and whatever is free on both.
+Copy code to two machines
 
-Deploy on two machines, compile Client and Server individually on each, then run Server and run Client respectively.
+Machine 1: Get IP from machine, edit HOSTIP in Server.java to this.
+javac Server.java
+java Server
+
+Machine 2: Edit HOSTIP in Client.java.
+javac Client.java
+java Client
+
+Should output Server time.
 
 Runs on openjdk version "10.0.2"
 
