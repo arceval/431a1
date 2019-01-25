@@ -3,6 +3,8 @@ import java.util.Date;
 public class ImplServerDate implements ServerDate{
     @Override
     public Date getDate() {
-        return new Date();
+        Date now = new Date();
+        System.out.println(now);
+        return now;
     }
 }

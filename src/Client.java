@@ -9,7 +9,7 @@ public class Client {
 
     public static void main(String[] args) {
         try{
-            // We can change the host to remote machine address
+            // The HOSTIP must be changed, the port may need to be changed if in use on the server/client
             Registry registry = LocateRegistry.getRegistry("HOSTIP",1099);
             Date time = new Date();
             long before_server_call = time.getTime();

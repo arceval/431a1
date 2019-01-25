@@ -8,6 +8,7 @@ public class Server extends ImplServerDate{
 
     public static void main(String[] args) {
         try{
+            // The HOSTIP must be changed to the ip of the server, the port may need to be changed if in use
             int port = 1099;
             System.setProperty("java.rmi.server.hostname","HOSTIP");
             ImplServerDate obj = new ImplServerDate();
