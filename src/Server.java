@@ -10,15 +10,16 @@ public class Server extends ImplServerDate{
         try{
             // The HOSTIP must be changed to the ip of the server, the port may need to be changed if in use
             int port = 1099;
-            System.setProperty("java.rmi.server.hostname","HOSTIP");
-            ImplServerDate obj = new ImplServerDate();
-            Registry registry = LocateRegistry.createRegistry(port);
-            ServerDate stub = (ServerDate) UnicastRemoteObject.exportObject(obj, port);
+            System.setProperty("java.rmi.server.hostname","HOSTIP"); // Some setup to allow the registry to work
 
-            registry.bind("CurrentDate", stub);
+            ImplServerDate obj = new ImplServerDate();
+            Registry registry = LocateRegistry.createRegistry(port); // Creates the RMI registry
+
+            ServerDate stub = (ServerDate) UnicastRemoteObject.exportObject(obj, port);
+            registry.bind("CurrentDate", stub); // Makes ServerDate available on RMI from a remote client
             System.err.println("Server Ready");
         } catch(Exception e){
-            System.err.println("Server exception: " + e.toString());
+            System.err.println("Server exception: " + e.toString()); // Handle errors
             e.printStackTrace();
         }
     }
